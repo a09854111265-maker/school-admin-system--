@@ -9,5 +9,6 @@ if (!isset($_SESSION['login'])) {
 
 <h1>後台首頁</h1>
 <p>歡迎登入校務行政系統</p>
+<a href="students.php">學生資料管理</a><br><br>
 
 <a href="logout.php">登出</a>
