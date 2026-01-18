@@ -1,0 +1,1 @@
+<?php echo 'School Admin System Running';
