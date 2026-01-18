@@ -1,1 +1,5 @@
-<?php echo 'School Admin System Running';
+<?php
+session_start();
+session_destroy();
+header('Location: login.php');
+exit;
