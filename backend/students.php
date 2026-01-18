@@ -5,7 +5,19 @@ if (!isset($_SESSION['login'])) {
     exit;
 }
 
-$file = __DIR__ . '/data/students.json';
+$dataDir = __DIR__ . '/data';
+$file = $dataDir . '/students.json';
+
+// 如果資料夾不存在就建立
+if (!is_dir($dataDir)) {
+    mkdir($dataDir, 0777, true);
+}
+
+// 如果檔案不存在就建立
+if (!file_exists($file)) {
+    file_put_contents($file, json_encode([]));
+}
+
 $students = json_decode(file_get_contents($file), true);
 
 // 新增學生
@@ -20,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 ?>
+
 
 <h2>學生管理</h2>
 
